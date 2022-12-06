@@ -58,7 +58,6 @@ public class StudentView extends javax.swing.JFrame {
         btnapartment = new javax.swing.JButton();
         btnroommate = new javax.swing.JButton();
         btnreportissue = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         btnlogout = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -86,21 +85,13 @@ public class StudentView extends javax.swing.JFrame {
         });
 
         btnroommate.setFont(new java.awt.Font("Segoe UI Black", 3, 12)); // NOI18N
-        btnroommate.setText("Roommate Search");
+        btnroommate.setText("Products for Sale");
 
         btnreportissue.setFont(new java.awt.Font("Segoe UI Black", 3, 12)); // NOI18N
         btnreportissue.setText("Report an Issue");
         btnreportissue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnreportissueActionPerformed(evt);
-            }
-        });
-
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 3, 12)); // NOI18N
-        jButton1.setText("Temporary Accomodation");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
             }
         });
 
@@ -122,8 +113,7 @@ public class StudentView extends javax.swing.JFrame {
                         .addGap(36, 36, 36)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnroommate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnapartment, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnapartment, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
                             .addComponent(btnreportissue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnbrokers, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -140,9 +130,7 @@ public class StudentView extends javax.swing.JFrame {
                 .addComponent(btnapartment)
                 .addGap(36, 36, 36)
                 .addComponent(btnroommate)
-                .addGap(37, 37, 37)
-                .addComponent(jButton1)
-                .addGap(34, 34, 34)
+                .addGap(94, 94, 94)
                 .addComponent(btnreportissue)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
                 .addComponent(btnlogout)
@@ -188,10 +176,6 @@ public class StudentView extends javax.swing.JFrame {
         // TODO add your handling code here:
          setVisible(false);
     }//GEN-LAST:event_btnlogoutActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnreportissueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreportissueActionPerformed
         // TODO add your handling code here:
@@ -250,7 +234,6 @@ public class StudentView extends javax.swing.JFrame {
     private javax.swing.JButton btnlogout;
     private javax.swing.JButton btnreportissue;
     private javax.swing.JButton btnroommate;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
