@@ -63,8 +63,7 @@
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="btnroommate" max="32767" attributes="0"/>
-                                  <Component id="jButton1" max="32767" attributes="0"/>
-                                  <Component id="btnapartment" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnapartment" alignment="0" pref="188" max="32767" attributes="0"/>
                                   <Component id="btnreportissue" alignment="0" max="32767" attributes="0"/>
                                   <Component id="btnbrokers" min="-2" pref="178" max="-2" attributes="0"/>
                               </Group>
@@ -87,9 +86,7 @@
                       <Component id="btnapartment" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="btnroommate" linkSize="2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                       <Component id="btnreportissue" linkSize="2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="314" max="32767" attributes="0"/>
                       <Component id="btnlogout" min="-2" max="-2" attributes="0"/>
@@ -126,7 +123,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI Black" size="12" style="3"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Roommate Search"/>
+                <Property name="text" type="java.lang.String" value="Products for Sale"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnreportissue">
@@ -138,17 +135,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnreportissueActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI Black" size="12" style="3"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Temporary Accomodation"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnlogout">
