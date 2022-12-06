@@ -450,10 +450,8 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
         lblphoto.setIcon(icon);
-        void createMapView(JPanel parent) {
-    MapView view = new MapView();
-    parent.add(view);
-}
+        
+
               
         }else if(selectedRowIndex == 1 ){
             
