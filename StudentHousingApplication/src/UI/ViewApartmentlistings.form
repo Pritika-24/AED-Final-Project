@@ -34,7 +34,7 @@
               <Component id="btntwobhk" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
               <Component id="btnthreebhk" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="281" max="32767" attributes="0"/>
+              <EmptySpace pref="461" max="32767" attributes="0"/>
               <Component id="btnsearch" min="-2" pref="110" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
           </Group>
@@ -59,32 +59,45 @@
                   <Component id="lblmbta" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="txtlandname" alignment="0" pref="213" max="32767" attributes="0"/>
-                  <Component id="txtid" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtapttype" max="32767" attributes="0"/>
-                  <Component id="txtprice" alignment="1" max="32767" attributes="0"/>
-                  <Component id="txtutilities" alignment="1" max="32767" attributes="0"/>
-                  <Component id="txtgrocery" alignment="1" max="32767" attributes="0"/>
-                  <Component id="txthospitals" alignment="1" max="32767" attributes="0"/>
-                  <Component id="txtmbta" alignment="1" max="32767" attributes="0"/>
-                  <Component id="txtbrokername" alignment="1" max="32767" attributes="0"/>
-                  <Component id="txtemailid" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtaptname" alignment="0" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="txtlandname" alignment="0" pref="213" max="32767" attributes="0"/>
+                      <Component id="txtid" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtapttype" max="32767" attributes="0"/>
+                      <Component id="txtprice" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtutilities" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtgrocery" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txthospitals" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtmbta" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtbrokername" alignment="1" max="32767" attributes="0"/>
+                      <Component id="txtemailid" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtaptname" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="btnlocation" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="cmbtime" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnbooktour" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
                       <Component id="btnview" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                       <Component id="btnrefresh" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="lblphoto" min="-2" pref="183" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                      <Component id="lblphoto" min="-2" pref="418" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -109,12 +122,12 @@
                   <Component id="btnrefresh" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lbllandname" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtlandname" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbllandname" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtlandname" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
@@ -122,18 +135,29 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="txtprice" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtprice" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cmbtime" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblutilities" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtutilities" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtgrocery" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblgrocery" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblutilities" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtutilities" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtgrocery" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblgrocery" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="btnbooktour" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -145,30 +169,34 @@
                           <Component id="lblmbta" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="txtmbta" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtbrokername" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblbrokername" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblemailid" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="txtemailid" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtaptname" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblaptname" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblid" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="txtid" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Component id="lblphoto" alignment="1" min="-2" pref="188" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="lblphoto" min="-2" pref="316" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="txtbrokername" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblbrokername" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblemailid" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="txtemailid" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtaptname" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblaptname" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblid" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="txtid" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <Component id="btnlocation" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -501,6 +529,37 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Photo"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnlocation">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Location"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnlocationActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnbooktour">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Book Apartment Tour"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnbooktourActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cmbtime">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Select"/>
+            <StringItem index="1" value="9 AM - 12 AM"/>
+            <StringItem index="2" value="12 AM - 3 PM"/>
+            <StringItem index="3" value="3 PM - 5 PM"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>
