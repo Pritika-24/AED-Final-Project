@@ -3,16 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package UI;
-
+import java.net.URL;
 import Model.Apartmentlistings;
 import Model.ApartmentlistingsDirectory;
 import Model.Broker;
 import Model.SQLconnection;
 import Model.Student;
 import java.awt.CardLayout;
+import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,6 +26,7 @@ import java.util.logging.Logger;
 import javax.swing.ButtonGroup;
 import javax.swing.ButtonModel;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -51,6 +54,8 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
          
         ad.getApartmentlistingsDirectory();
         PopulateTable();
+        //final JTextField url = new JTextField(20);
+		
     }
 
     /**
@@ -95,6 +100,9 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
         btnview = new javax.swing.JButton();
         btnrefresh = new javax.swing.JButton();
         lblphoto = new javax.swing.JLabel();
+        btnlocation = new javax.swing.JButton();
+        btnbooktour = new javax.swing.JButton();
+        cmbtime = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(0, 153, 153));
 
@@ -254,6 +262,22 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
 
         lblphoto.setText("Photo");
 
+        btnlocation.setText("Location");
+        btnlocation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlocationActionPerformed(evt);
+            }
+        });
+
+        btnbooktour.setText("Book Apartment Tour");
+        btnbooktour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbooktourActionPerformed(evt);
+            }
+        });
+
+        cmbtime.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "9 AM - 12 AM", "12 AM - 3 PM", "3 PM - 5 PM" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -267,7 +291,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
                 .addComponent(btntwobhk)
                 .addGap(70, 70, 70)
                 .addComponent(btnthreebhk)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 461, Short.MAX_VALUE)
                 .addComponent(btnsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -289,28 +313,37 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
                     .addComponent(lblapttype)
                     .addComponent(lblmbta))
                 .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtlandname, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                    .addComponent(txtid)
-                    .addComponent(txtapttype)
-                    .addComponent(txtprice, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtutilities, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtgrocery, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txthospitals, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtmbta, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtbrokername, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtemailid)
-                    .addComponent(txtaptname))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtlandname, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                        .addComponent(txtid)
+                        .addComponent(txtapttype)
+                        .addComponent(txtprice, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txtutilities, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txtgrocery, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txthospitals, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txtmbta, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txtbrokername, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txtemailid)
+                        .addComponent(txtaptname))
+                    .addComponent(btnlocation))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(cmbtime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnbooktour)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(248, 248, 248)
                         .addComponent(btnview)
                         .addGap(77, 77, 77)
                         .addComponent(btnrefresh))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblphoto, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8)))
-                .addGap(90, 90, 90))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(94, 94, 94)
+                        .addComponent(lblphoto, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -331,26 +364,33 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
                     .addComponent(btnview)
                     .addComponent(btnrefresh))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbllandname)
+                    .addComponent(txtlandname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lbllandname)
-                            .addComponent(txtlandname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(15, 15, 15)
                                 .addComponent(lblprice, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblutilities)
-                            .addComponent(txtutilities, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(14, 14, 14)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtgrocery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblgrocery, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cmbtime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblutilities)
+                                    .addComponent(txtutilities, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(14, 14, 14)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtgrocery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblgrocery, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(btnbooktour)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblhospitals, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -358,25 +398,28 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblmbta, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtmbta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(lblphoto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtbrokername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblbrokername, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblemailid, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtemailid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtaptname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblaptname, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblid, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(34, Short.MAX_VALUE))
+                            .addComponent(txtmbta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtbrokername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblbrokername, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblemailid, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtemailid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtaptname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblaptname, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblid, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(lblphoto, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(btnlocation)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -413,7 +456,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
     private void btnviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewActionPerformed
         // TODO add your handling code here:
      
-        
+      
     
          int selectedRowIndex = tblapartmentlistings.getSelectedRow();
 
@@ -441,81 +484,91 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
         txtmbta.setText(model.getValueAt(selectedRowIndex, 6).toString());
         txtprice.setText(model.getValueAt(selectedRowIndex, 2).toString());
         txtutilities.setText(model.getValueAt(selectedRowIndex, 3).toString());
-
+        
+   String apt= txtaptname.getText();
       
-        if(selectedRowIndex == 0){
+        if(apt.equals("JVUE")){
         
             ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
         lblphoto.setIcon(icon);
-        
+      
 
               
-        }else if(selectedRowIndex == 1 ){
+        }else if(apt.equals("Longwood") ){
             
             ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
         lblphoto.setIcon(icon);
-        }else if(selectedRowIndex == 2){
+        
+        }else if(apt.equals("Mission Hill")){
             
             ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
         lblphoto.setIcon(icon);
-        }else if(selectedRowIndex == 3){
+        
+        }else if(apt.equals("Mission Park")){
             
             ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
         lblphoto.setIcon(icon);
-        }else if(selectedRowIndex == 4){
+        
+        }else if(apt.equals("West Square")){
             
             ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
         lblphoto.setIcon(icon);
-        }else if(selectedRowIndex == 5){
+        
+        }else if(apt.equals("Parkway")){
             
             ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
         lblphoto.setIcon(icon);
-        }else if(selectedRowIndex == 6){
+        
+        }else if(apt.equals("Westland")){
             
             ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
         lblphoto.setIcon(icon);
-        }else if(selectedRowIndex == 7){
+        
+        }else if(apt.equals("Vero")){
             
             ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
         lblphoto.setIcon(icon);
-        }else if(selectedRowIndex == 8){
+        
+        }else if(apt.equals("Church Park")){
             
             ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
         lblphoto.setIcon(icon);
-        }else if(selectedRowIndex == 9){
+        
+        }else if(apt.equals("Greenhouse")){
             
             ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
         lblphoto.setIcon(icon);
+        
         }else{
              JOptionPane.showMessageDialog(this,"Error");
         }   
@@ -544,8 +597,82 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
        }
     }//GEN-LAST:event_btnrefreshActionPerformed
 
+    private void btnlocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlocationActionPerformed
+        // TODO add your handling code here:
+             // DefaultTableModel model = (DefaultTableModel) tblapartmentlistings.getModel();
+         int selectedRowIndex = tblapartmentlistings.getSelectedRow();
+           
+          String apt= txtaptname.getText();
+        try{
+           if(apt.equals("JVUE") ){
+               
+            Desktop.getDesktop().browse(new URL("https://www.google.com/maps/place/J+Vue+at+the+LMA+Apartments/@42.3342965,-71.1030556,17z/data=!3m1!4b1!4m5!3m4!1s0x89e379890fad9993:0xd7f2c4e05f88e13c!8m2!3d42.3342893!4d-71.1008465").toURI());
+           }else if(apt.equals("Longwood")){
+               
+                 Desktop.getDesktop().browse(new URL("https://www.google.com/maps/place/The+Longwood/@42.3334423,-71.1038875,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37988dfd77cd7:0xdb25007468045253!8m2!3d42.3334497!4d-71.1016943?hl=en").toURI());
+           }
+           else if(apt.equals("Mission Hill")){
+               
+                 Desktop.getDesktop().browse(new URL("https://www.google.com/maps/place/Mission+Main+Apartments/@42.3339717,-71.100981,17z/data=!3m1!4b1!4m5!3m4!1s0x89e379899c9560a5:0x54a51bd35307f274!8m2!3d42.3339717!4d-71.0987923?hl=en").toURI());
+           } 
+             else if(apt.equals("Mission Park")){
+               
+                 Desktop.getDesktop().browse(new URL("https://www.google.com/maps/place/Mission+Park/@42.3336467,-71.1108708,17z/data=!3m1!4b1!4m5!3m4!1s0x89e379901ca1c0f1:0x501b2929438c510a!8m2!3d42.3336467!4d-71.1086821?hl=en").toURI());
+           } 
+           else if(apt.equals("West Square")){
+               
+                 Desktop.getDesktop().browse(new URL("https://www.google.com/maps/place/West+Square+Apartments/@42.3409289,-71.0541777,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a881852a5ff:0x73bc95f1c486ef23!8m2!3d42.340929!4d-71.049693?hl=en").toURI());
+           } 
+           else if(apt.equals("Parkway")){
+               
+                 Desktop.getDesktop().browse(new URL("https://www.google.com/maps/place/Parkway+Apartments/@42.2676322,-71.1714442,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37f2cf65b75fd:0x10a83257d368b63b!8m2!3d42.2676322!4d-71.1714442?hl=en").toURI());
+
+        
+           }  else if(apt.equals("Westland")){
+               
+                 Desktop.getDesktop().browse(new URL("https://www.google.com/maps/place/Westland+Avenue+Garage/@42.3438579,-71.0898203,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a1a233fe3e3:0x13f6ebf4b208255e!8m2!3d42.3437529!4d-71.0876232?hl=en").toURI());
+          
+           }  else if(apt.equals("Vero")){
+               
+                 Desktop.getDesktop().browse(new URL("https://www.google.com/maps/place/Vero+Apartments/@42.3991368,-71.0440581,17z/data=!3m1!4b1!4m5!3m4!1s0x89e3713d5c02c3ed:0x57546e6acadd9554!8m2!3d42.3991368!4d-71.0418694?hl=en").toURI());
+          
+           }   else if(apt.equals("Church Park")){
+               
+                 Desktop.getDesktop().browse(new URL("https://www.google.com/maps/place/Church+Park+Luxury+Apartments/@42.3443957,-71.0887858,17z/data=!3m2!4b1!5s0x89e37055dbf39f5b:0xa6234533d0ea82ad!4m5!3m4!1s0x89e37a1a6d6f7fd5:0xbd63a63c0b659388!8m2!3d42.3443957!4d-71.0865971?hl=en").toURI());
+          
+           }       else if(apt.equals("Greenhouse")){
+               
+                 Desktop.getDesktop().browse(new URL( "https://www.google.com/maps/place/The+Greenhouse+Apartments/@42.3446152,-71.0843947,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a11b08c434f:0x800b80accd9e152b!8m2!3d42.3446152!4d-71.082206?hl=en").toURI());
+
+
+          
+           } else{
+           }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e);
+            
+        }
+    }//GEN-LAST:event_btnlocationActionPerformed
+
+    private void btnbooktourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbooktourActionPerformed
+        // TODO add your handling code here:
+          int selectedRowIndex = tblapartmentlistings.getSelectedRow();
+           String query = cmbtime.getSelectedItem().toString();
+        if(query == "Select" ){
+            JOptionPane.showMessageDialog(this, "Please Select Time Slot");
+        }else if(selectedRowIndex < 0){
+             JOptionPane.showMessageDialog(this, "Please Select the Apartment");
+        
+        } else {
+            JOptionPane.showMessageDialog(this, "Request Sent Successfully");
+          }
+        
+    }//GEN-LAST:event_btnbooktourActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnbooktour;
+    private javax.swing.JButton btnlocation;
     private javax.swing.JRadioButton btnonebhk;
     private javax.swing.JButton btnrefresh;
     private javax.swing.JButton btnsearch;
@@ -554,6 +681,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
     private javax.swing.JRadioButton btntwobhk;
     private javax.swing.JButton btnview;
     private javax.swing.ButtonGroup buttonGroup;
+    private javax.swing.JComboBox<String> cmbtime;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblaptname;
     private javax.swing.JLabel lblapttype;
