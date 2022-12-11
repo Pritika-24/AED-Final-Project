@@ -80,10 +80,6 @@ public class ViewBrokers extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         txtmanagement = new javax.swing.JTextField();
         btnbook = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        rbtn9 = new javax.swing.JRadioButton();
-        rbtn12 = new javax.swing.JRadioButton();
-        rbtn3 = new javax.swing.JRadioButton();
         btnview = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         txtemailid = new javax.swing.JTextField();
@@ -106,22 +102,22 @@ public class ViewBrokers extends javax.swing.JPanel {
         tblbrokers.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         tblbrokers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "License Number", "Name", "Contact Number", "Broker Fee", "Management"
+                "License Number", "Name", "Contact Number", "Broker Fee", "Management", "Email ID"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -194,32 +190,6 @@ public class ViewBrokers extends javax.swing.JPanel {
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel9.setText("Time Slot: ");
-
-        buttonGroup.add(rbtn9);
-        rbtn9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        rbtn9.setText("9 AM - 12 PM");
-
-        buttonGroup.add(rbtn12);
-        rbtn12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        rbtn12.setText("12 PM - 3 PM");
-        rbtn12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtn12ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup.add(rbtn3);
-        rbtn3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        rbtn3.setText("3 PM - 5 PM");
-        rbtn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbtn3ActionPerformed(evt);
-            }
-        });
-
         btnview.setFont(new java.awt.Font("Segoe UI Black", 3, 12)); // NOI18N
         btnview.setText("View");
         btnview.addActionListener(new java.awt.event.ActionListener() {
@@ -264,17 +234,8 @@ public class ViewBrokers extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnbook, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(rbtn9, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(rbtn12, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(rbtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(123, 123, 123)
+                        .addComponent(btnbook, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnview, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(67, 67, 67)
@@ -293,32 +254,22 @@ public class ViewBrokers extends javax.swing.JPanel {
                     .addComponent(btnsearch)
                     .addComponent(btnrefresh)
                     .addComponent(btnview))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(rbtn9, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbtn12, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rbtn3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtlicenseno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(txtcontactno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtbrokerfee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtlicenseno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtcontactno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtbrokerfee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
                 .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtmanagement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -341,6 +292,8 @@ public class ViewBrokers extends javax.swing.JPanel {
 
     private void btnviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewActionPerformed
         // TODO add your handling code here:
+
+        
         int selectedRowIndex = tblbrokers.getSelectedRow();
 
         if(selectedRowIndex < 0){
@@ -361,22 +314,23 @@ public class ViewBrokers extends javax.swing.JPanel {
         txtcontactno.setText(model.getValueAt(selectedRowIndex, 2).toString());
         txtbrokerfee.setText(model.getValueAt(selectedRowIndex, 3).toString());
         txtmanagement.setText(model.getValueAt(selectedRowIndex, 4).toString());
+        txtemailid.setText(model.getValueAt(selectedRowIndex, 5).toString());
         //txtemail.setText(model.getValueAt(selectedRowIndex, 5).toString());
 
     }//GEN-LAST:event_btnviewActionPerformed
 
-    private void rbtn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbtn3ActionPerformed
-
     private void btnbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbookActionPerformed
-        ButtonModel m = null;
-        // TODO add your handling code here:
-        if( buttonGroup.isSelected(m)){
-            JOptionPane.showMessageDialog(this, "Please Select Time Slot" );
-        }else{
-            JOptionPane.showMessageDialog(this, "Appointment Request Sent" );
-        }
+       
+      
+               StudentDetailsPage frame = new StudentDetailsPage();
+         frame.setTitle("Student Details Page");
+                frame.setVisible(true);
+
+                frame.setDefaultCloseOperation(StudentView.EXIT_ON_CLOSE);
+                frame.setResizable(false);
+            
+            
+        
 
     }//GEN-LAST:event_btnbookActionPerformed
 
@@ -393,7 +347,7 @@ public class ViewBrokers extends javax.swing.JPanel {
         txtcontactno.setText("");
         txtbrokerfee.setText("");
         txtmanagement.setText("");
-
+        txtemailid.setText("");
         buttonGroup.clearSelection();
 
     }//GEN-LAST:event_btnrefreshActionPerformed
@@ -416,10 +370,6 @@ public class ViewBrokers extends javax.swing.JPanel {
     private void cmbbrokerfeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbbrokerfeeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbbrokerfeeActionPerformed
-
-    private void rbtn12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtn12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbtn12ActionPerformed
   
    
   
@@ -441,13 +391,9 @@ public class ViewBrokers extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JRadioButton rbtn12;
-    private javax.swing.JRadioButton rbtn3;
-    private javax.swing.JRadioButton rbtn9;
     javax.swing.JTable tblbrokers;
     private javax.swing.JTextField txtbrokerfee;
     private javax.swing.JTextField txtcontactno;
@@ -464,13 +410,14 @@ public class ViewBrokers extends javax.swing.JPanel {
         model.setRowCount(0);
         for(Broker b: bd.getList())
         {
-             Object[] row=new Object[6];
+             Object[] row=new Object[7];
              row[0]=b.getLicenseno();
              row[1]=b.getName();
              row[2]=b.getContactno();
              row[3]=b.getBrokerfee();
              row[4]=b.getManagement();
-             row[5]=b;
+             row[5]=b.getEmailid();
+             row[6]=b;
     
              model.addRow(row);
         }  
@@ -484,4 +431,5 @@ public class ViewBrokers extends javax.swing.JPanel {
         trs.setRowFilter(RowFilter.regexFilter(str,i));
         
     }
+
 }
