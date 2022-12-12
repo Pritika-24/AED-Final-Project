@@ -159,7 +159,7 @@ properties.put("mail.debug", "true");
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(ToEmail));
             message.setSubject(Subjects);
       
-            message.setText(txtissue.getText()+"\n" +"Thank you for contacting us! We will contact you shortly. This is a auto generated email");
+            message.setText(txtissue.getText()+"\n" +"Thank you for contacting us! We will contact you shortly. This is an auto generated email");
             Transport.send(message);
             
                 JOptionPane.showMessageDialog(this, "Issue successfully raised");

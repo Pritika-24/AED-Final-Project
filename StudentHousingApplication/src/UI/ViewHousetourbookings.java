@@ -69,16 +69,21 @@ public class ViewHousetourbookings extends javax.swing.JPanel {
 
         tblviewapartment.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Apartment Name", "Apartment type", "Price ", "Landlord Name", "Apartment ID"
+                "Apartment Name", "Apartment type", "Price ", "Landlord Name", "Apartment ID", "null"
             }
         ));
         jScrollPane2.setViewportView(tblviewapartment);
+        if (tblviewapartment.getColumnModel().getColumnCount() > 0) {
+            tblviewapartment.getColumnModel().getColumn(5).setMinWidth(0);
+            tblviewapartment.getColumnModel().getColumn(5).setPreferredWidth(0);
+            tblviewapartment.getColumnModel().getColumn(5).setMaxWidth(0);
+        }
 
         btnrequest.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnrequest.setText("Request Landlord");

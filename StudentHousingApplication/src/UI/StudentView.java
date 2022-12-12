@@ -86,6 +86,11 @@ public class StudentView extends javax.swing.JFrame {
 
         btnroommate.setFont(new java.awt.Font("Segoe UI Black", 3, 12)); // NOI18N
         btnroommate.setText("Products for Sale");
+        btnroommate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnroommateActionPerformed(evt);
+            }
+        });
 
         btnreportissue.setFont(new java.awt.Font("Segoe UI Black", 3, 12)); // NOI18N
         btnreportissue.setText("Report an Issue");
@@ -179,6 +184,8 @@ public class StudentView extends javax.swing.JFrame {
 
     private void btnreportissueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreportissueActionPerformed
         // TODO add your handling code here:
+        ViewReportissue viewreportissue = new ViewReportissue();
+        SplitPane.setRightComponent(viewreportissue);
     }//GEN-LAST:event_btnreportissueActionPerformed
 
     private void btnapartmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnapartmentActionPerformed
@@ -187,6 +194,13 @@ public class StudentView extends javax.swing.JFrame {
         SplitPane.setRightComponent(viewapartmentlistings);
         
     }//GEN-LAST:event_btnapartmentActionPerformed
+
+    private void btnroommateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnroommateActionPerformed
+        // TODO add your handling code here:
+        
+        ViewProducts vp = new ViewProducts();
+        SplitPane.setRightComponent(vp);
+    }//GEN-LAST:event_btnroommateActionPerformed
 
     /**
      * @param args the command line arguments

@@ -165,7 +165,7 @@ properties.put("mail.debug", "true");
             JOptionPane.showMessageDialog(this, "Success");
            
               }catch(Exception ex){
-            JOptionPane.showMessageDialog(this,ex);
+            JOptionPane.showMessageDialog(this,null);
         }
  
     
