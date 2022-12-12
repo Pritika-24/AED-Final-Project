@@ -49,6 +49,7 @@ public class MarketplaceadminLoginpage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnlogin = new javax.swing.JButton();
         btnclear = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,6 +89,13 @@ public class MarketplaceadminLoginpage extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -110,7 +118,9 @@ public class MarketplaceadminLoginpage extends javax.swing.JFrame {
                             .addComponent(txtusername, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(15, 15, 15)
-                                .addComponent(btnclear)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton1)
+                                    .addComponent(btnclear))))
                         .addGap(69, 69, 69))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -138,7 +148,9 @@ public class MarketplaceadminLoginpage extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnclear, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(194, Short.MAX_VALUE))
+                .addGap(86, 86, 86)
+                .addComponent(jButton1)
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -174,7 +186,7 @@ public class MarketplaceadminLoginpage extends javax.swing.JFrame {
 
         try {
             Connection con=SQLconnection.dbconnector();
-            PreparedStatement stmt=con.prepareStatement("SELECT * from Landlord WHERE USERNAME=? AND PASSWORD=?");
+            PreparedStatement stmt=con.prepareStatement("SELECT * from Product WHERE USERNAME=? AND PASSWORD=?");
            
             stmt.setString(1,USERNAME);
             stmt.setString(2,PASSWORD);
@@ -190,8 +202,8 @@ public class MarketplaceadminLoginpage extends javax.swing.JFrame {
 
             else if ( rs.next()){
                 JOptionPane.showMessageDialog(this, "Login Successfull");
-                StudentView frame=new StudentView();
-                frame.setTitle("StudentView");
+                MarketplacePage frame=new MarketplacePage();
+                frame.setTitle("Market Place");
                 frame.setVisible(true);
 
                 frame.setDefaultCloseOperation(StudentView.EXIT_ON_CLOSE);
@@ -219,6 +231,11 @@ public class MarketplaceadminLoginpage extends javax.swing.JFrame {
         txtusername.setText("");
         txtpassword.setText("");
     }//GEN-LAST:event_btnclearActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,6 +275,7 @@ public class MarketplaceadminLoginpage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnclear;
     private javax.swing.JButton btnlogin;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -14,6 +14,7 @@ public class HeadRealtorPage extends javax.swing.JFrame {
     /** Creates new form HeadRealtorPage */
     public HeadRealtorPage() {
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     /** This method is called from within the constructor to
@@ -25,7 +26,7 @@ public class HeadRealtorPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSplitPane1 = new javax.swing.JSplitPane();
+        SplitPane = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
         btnaddbrokers = new javax.swing.JButton();
         btnviewbrokers = new javax.swing.JButton();
@@ -45,6 +46,11 @@ public class HeadRealtorPage extends javax.swing.JFrame {
 
         btnviewbrokers.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         btnviewbrokers.setText("View Brokers");
+        btnviewbrokers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnviewbrokersActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -55,7 +61,7 @@ public class HeadRealtorPage extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnviewbrokers)
                     .addComponent(btnaddbrokers))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -67,7 +73,7 @@ public class HeadRealtorPage extends javax.swing.JFrame {
                 .addContainerGap(237, Short.MAX_VALUE))
         );
 
-        jSplitPane1.setLeftComponent(jPanel1);
+        SplitPane.setLeftComponent(jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -82,17 +88,17 @@ public class HeadRealtorPage extends javax.swing.JFrame {
             .addGap(0, 482, Short.MAX_VALUE)
         );
 
-        jSplitPane1.setRightComponent(jPanel2);
+        SplitPane.setRightComponent(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
+            .addComponent(SplitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 698, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addComponent(SplitPane)
         );
 
         pack();
@@ -100,7 +106,15 @@ public class HeadRealtorPage extends javax.swing.JFrame {
 
     private void btnaddbrokersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddbrokersActionPerformed
         // TODO add your handling code here:
+        AddBroker addbroker = new AddBroker();
+        SplitPane.setRightComponent(addbroker);
     }//GEN-LAST:event_btnaddbrokersActionPerformed
+
+    private void btnviewbrokersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewbrokersActionPerformed
+        // TODO add your handling code here:
+        DisplayBrokers displaybrokers = new DisplayBrokers();
+        SplitPane.setRightComponent(displaybrokers);
+    }//GEN-LAST:event_btnviewbrokersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,11 +152,11 @@ public class HeadRealtorPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSplitPane SplitPane;
     private javax.swing.JButton btnaddbrokers;
     private javax.swing.JButton btnviewbrokers;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSplitPane jSplitPane1;
     // End of variables declaration//GEN-END:variables
 
 }

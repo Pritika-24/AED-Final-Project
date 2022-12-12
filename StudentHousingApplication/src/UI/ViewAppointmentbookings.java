@@ -216,7 +216,7 @@ AppointmentRequesthistory his =  new AppointmentRequesthistory();
          String ToEmail = txtemailid.getText();
         String FromEmail = "aedproject123@gmail.com";//studyviral2@gmail.com
         String FromEmailPassword = "wiiwhakaddhmcypq";//You email Password from you want to send email
-        String Subjects = "Appointment Cancelled";
+        String Subjects = "Appointment Accepted";
         
         Properties properties = new Properties();
         properties.put("mail.smtp.auth","true");

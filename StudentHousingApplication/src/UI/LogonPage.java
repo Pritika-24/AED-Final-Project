@@ -48,6 +48,7 @@ public class LogonPage extends javax.swing.JFrame {
         btnclear = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,7 +57,7 @@ public class LogonPage extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("STUDENT HOUSING DATABASE MANAGEMENT SYSTEM");
+        jLabel3.setText("STUDENT LOGIN PAGE");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(350, 30, 710, 50);
 
@@ -84,7 +85,7 @@ public class LogonPage extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnlogin);
-        btnlogin.setBounds(1000, 351, 72, 30);
+        btnlogin.setBounds(1000, 370, 72, 30);
 
         btnclear.setFont(new java.awt.Font("Segoe UI Black", 3, 12)); // NOI18N
         btnclear.setText("Clear");
@@ -94,7 +95,7 @@ public class LogonPage extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnclear);
-        btnclear.setBounds(1110, 351, 72, 30);
+        btnclear.setBounds(1110, 370, 72, 30);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -105,6 +106,15 @@ public class LogonPage extends javax.swing.JFrame {
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Evita Alice Paul\\Downloads\\apartmentbuilding.gif")); // NOI18N
         jPanel1.add(jLabel5);
         jLabel5.setBounds(60, 110, 790, 540);
+
+        jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(1120, 520, 72, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,10 +135,11 @@ public class LogonPage extends javax.swing.JFrame {
 
         String USERNAME = txtusername.getText();
         String PASSWORD = txtpassword.getText();
-
+        
         try {
             Connection con=SQLconnection.dbconnector();
             PreparedStatement stmt=con.prepareStatement("SELECT * from Student WHERE USERNAME=? AND PASSWORD=?");
+             // PreparedStatement smt=con.prepareStatement("SELECT * from Brokers WHERE USERNAME=? AND PASSWORD=?");
 
             stmt.setString(1,USERNAME);
             stmt.setString(2,PASSWORD);
@@ -141,7 +152,8 @@ public class LogonPage extends javax.swing.JFrame {
             else if(PASSWORD.isBlank()){
                 JOptionPane.showMessageDialog(null, "Please enter Password");
             }
-            else if (rs.next()){
+           
+            else if ( rs.next()){
                 JOptionPane.showMessageDialog(this, "Login Successfull");
                 StudentView frame=new StudentView();
                 frame.setTitle("StudentView");
@@ -150,8 +162,15 @@ public class LogonPage extends javax.swing.JFrame {
                 frame.setDefaultCloseOperation(StudentView.EXIT_ON_CLOSE);
                 frame.setResizable(false);
 
-            } else {
+            } else if(rs.next()){
 
+                //Connection con=SQLconnection.dbconnector();
+          
+
+            stmt.setString(1,USERNAME);
+            stmt.setString(2,PASSWORD);
+
+            }else{
                 JOptionPane.showMessageDialog(this, "Invalid Credentials");
             }
         } catch (SQLException ex) {
@@ -159,6 +178,7 @@ public class LogonPage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,ex);
 
         }
+
     }//GEN-LAST:event_btnloginActionPerformed
 
     private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
@@ -166,6 +186,11 @@ public class LogonPage extends javax.swing.JFrame {
         txtusername.setText("");
         txtpassword.setText("");
     }//GEN-LAST:event_btnclearActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,6 +230,7 @@ public class LogonPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnclear;
     private javax.swing.JButton btnlogin;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

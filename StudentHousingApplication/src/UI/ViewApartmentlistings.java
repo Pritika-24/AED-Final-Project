@@ -19,6 +19,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.logging.Level;
@@ -46,13 +47,15 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
      * Creates new form ViewApartmentlistings
      */
     ApartmentlistingsDirectory ad= new ApartmentlistingsDirectory();
-    ArrayList<Apartmentlistings > alist;
- 
+   ArrayList<Apartmentlistings > alist;
+ Apartmentlistings a;
  
     public ViewApartmentlistings() {
         initComponents();
          
         ad.getApartmentlistingsDirectory();
+      this.a=a;
+        System.out.println("Running");
         PopulateTable();
         //final JTextField url = new JTextField(20);
 		
@@ -140,27 +143,27 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
         tblapartmentlistings.setBackground(new java.awt.Color(204, 255, 204));
         tblapartmentlistings.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Apartment Type", "Landlord Name", "Price", "Utilities", "Grocery Stores", "Hospitals", "MBTA", "Broker Name", "Email ID", "Apartment Name", "ID"
+                "Apartment Type", "Landlord Name", "Price", "Utilities", "Grocery Stores", "Hospitals", "MBTA", "Broker Name", "Email ID", "Apartment Name", "ID", "Title 12"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -187,6 +190,9 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
             tblapartmentlistings.getColumnModel().getColumn(8).setMinWidth(0);
             tblapartmentlistings.getColumnModel().getColumn(8).setPreferredWidth(0);
             tblapartmentlistings.getColumnModel().getColumn(8).setMaxWidth(0);
+            tblapartmentlistings.getColumnModel().getColumn(11).setMinWidth(0);
+            tblapartmentlistings.getColumnModel().getColumn(11).setPreferredWidth(0);
+            tblapartmentlistings.getColumnModel().getColumn(11).setMaxWidth(0);
         }
 
         lblapttype.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -489,7 +495,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
       
         if(apt.equals("JVUE")){
         
-            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
+            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\src\\Images\\jvue.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
@@ -499,7 +505,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
               
         }else if(apt.equals("Longwood") ){
             
-            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
+            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\src\\Images\\longwood.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
@@ -507,7 +513,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
         
         }else if(apt.equals("Mission Hill")){
             
-            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
+            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\src\\Images\\missionhill.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
@@ -515,7 +521,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
         
         }else if(apt.equals("Mission Park")){
             
-            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
+            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\src\\Images\\missionpark.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
@@ -523,7 +529,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
         
         }else if(apt.equals("West Square")){
             
-            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
+            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\src\\Images\\westsquare.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
@@ -531,7 +537,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
         
         }else if(apt.equals("Parkway")){
             
-            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
+            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\src\\Images\\parkway.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
@@ -539,7 +545,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
         
         }else if(apt.equals("Westland")){
             
-            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
+            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\src\\Images\\westland.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
@@ -547,7 +553,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
         
         }else if(apt.equals("Vero")){
             
-            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
+            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\src\\Images\\vero.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
@@ -555,7 +561,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
         
         }else if(apt.equals("Church Park")){
             
-            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
+            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\src\\Images\\churchpark.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
@@ -563,7 +569,7 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
         
         }else if(apt.equals("Greenhouse")){
             
-            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\students.jpg");
+            ImageIcon icon = new ImageIcon("C:\\Users\\Evita Alice Paul\\OneDrive\\Documents\\NetBeansProjects\\StudentHousingApplication\\src\\Images\\greenhouse.jpg");
 
            Image image=icon.getImage().getScaledInstance(lblphoto.getWidth(),lblphoto.getHeight(),Image.SCALE_SMOOTH);
         
@@ -643,10 +649,11 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
            }       else if(apt.equals("Greenhouse")){
                
                  Desktop.getDesktop().browse(new URL( "https://www.google.com/maps/place/The+Greenhouse+Apartments/@42.3446152,-71.0843947,17z/data=!3m1!4b1!4m5!3m4!1s0x89e37a11b08c434f:0x800b80accd9e152b!8m2!3d42.3446152!4d-71.082206?hl=en").toURI());
-
+            
 
           
            } else{
+              
            }
         }catch(Exception e){
             JOptionPane.showMessageDialog(this, e);
@@ -656,15 +663,35 @@ public class ViewApartmentlistings extends javax.swing.JPanel {
 
     private void btnbooktourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbooktourActionPerformed
         // TODO add your handling code here:
+          // TODO add your handling code here:
+        try {
+            Connection con=SQLconnection.dbconnector();
+             Statement stmt=con.createStatement();
+           String Query= "INSERT INTO ApartmentBooking (ApartmentName,ApartmentType,Price,LandlordName,ApartmentID) values ('"+txtaptname.getText()+"','"+txtapttype.getText()+"','"+txtprice.getText()+"','"+txtlandname.getText()+"','"+txtid.getText()+"')"; 
+        //JOptionPane.showMessageDialog(this,"Request sent Successfully");
+        stmt.executeUpdate(Query);
+        stmt.close();
+        con.close();
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(StudentDetailsPage.class.getName()).log(Level.SEVERE, null, ex);
+        }
           int selectedRowIndex = tblapartmentlistings.getSelectedRow();
            String query = cmbtime.getSelectedItem().toString();
         if(query == "Select" ){
             JOptionPane.showMessageDialog(this, "Please Select Time Slot");
         }else if(selectedRowIndex < 0){
              JOptionPane.showMessageDialog(this, "Please Select the Apartment");
+     
         
+            
         } else {
-            JOptionPane.showMessageDialog(this, "Request Sent Successfully");
+          StudentDetailsPage frame=new StudentDetailsPage();
+                frame.setTitle("Student Details Page");
+                frame.setVisible(true);
+
+                frame.setDefaultCloseOperation(StudentDetailsPage.EXIT_ON_CLOSE);
+                frame.setResizable(false);
           }
         
     }//GEN-LAST:event_btnbooktourActionPerformed
@@ -713,6 +740,7 @@ private void PopulateTable()
       
   
         DefaultTableModel model=(DefaultTableModel) tblapartmentlistings.getModel();
+ 
         model.setRowCount(0);
         for(Apartmentlistings a: ad.getList())
         {
@@ -733,6 +761,7 @@ private void PopulateTable()
              
     
              model.addRow(row);
+             
         }  
     }
  public void search(String str,int i) {

@@ -6,16 +6,16 @@ package UI;
 
 /**
  *
- * @author Evita Alice Paul
+ * @author Pritika
  */
-public class UniversityadminView extends javax.swing.JFrame {
+public class TechSupportpage extends javax.swing.JFrame {
 
     /**
-     * Creates new form UniversityadminView
+     * Creates new form TechSupportpage
      */
-    public UniversityadminView() {
+    public TechSupportpage() {
         initComponents();
-         this.setExtendedState(MAXIMIZED_BOTH);
+                this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -29,18 +29,18 @@ public class UniversityadminView extends javax.swing.JFrame {
 
         SplitPane = new javax.swing.JSplitPane();
         jPanel1 = new javax.swing.JPanel();
-        btnaddstudents = new javax.swing.JButton();
+        btnviewreportedissues = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
 
-        btnaddstudents.setFont(new java.awt.Font("Segoe UI Black", 3, 12)); // NOI18N
-        btnaddstudents.setText("Add Students");
-        btnaddstudents.addActionListener(new java.awt.event.ActionListener() {
+        btnviewreportedissues.setFont(new java.awt.Font("Segoe UI Black", 3, 12)); // NOI18N
+        btnviewreportedissues.setText("View Reported Issues ");
+        btnviewreportedissues.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnaddstudentsActionPerformed(evt);
+                btnviewreportedissuesActionPerformed(evt);
             }
         });
 
@@ -48,17 +48,17 @@ public class UniversityadminView extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(btnaddstudents, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnviewreportedissues)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(btnaddstudents)
-                .addContainerGap(418, Short.MAX_VALUE))
+                .addGap(149, 149, 149)
+                .addComponent(btnviewreportedissues, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(234, Short.MAX_VALUE))
         );
 
         SplitPane.setLeftComponent(jPanel1);
@@ -69,11 +69,11 @@ public class UniversityadminView extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 696, Short.MAX_VALUE)
+            .addGap(0, 499, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 595, Short.MAX_VALUE)
+            .addGap(0, 468, Short.MAX_VALUE)
         );
 
         SplitPane.setRightComponent(jPanel2);
@@ -92,11 +92,11 @@ public class UniversityadminView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnaddstudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaddstudentsActionPerformed
+    private void btnviewreportedissuesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewreportedissuesActionPerformed
         // TODO add your handling code here:
-        AddstudentsPage addstudentspage = new AddstudentsPage();
-        SplitPane.setRightComponent(addstudentspage);
-    }//GEN-LAST:event_btnaddstudentsActionPerformed
+        ViewReportedissues viewreportedissues = new ViewReportedissues();
+        SplitPane.setRightComponent(viewreportedissues);
+    }//GEN-LAST:event_btnviewreportedissuesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,27 +115,27 @@ public class UniversityadminView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UniversityadminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TechSupportpage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UniversityadminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TechSupportpage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UniversityadminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TechSupportpage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UniversityadminView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TechSupportpage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UniversityadminView().setVisible(true);
+                new TechSupportpage().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSplitPane SplitPane;
-    private javax.swing.JButton btnaddstudents;
+    private javax.swing.JButton btnviewreportedissues;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
